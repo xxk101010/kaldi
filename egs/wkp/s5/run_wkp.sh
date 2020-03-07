@@ -12,7 +12,7 @@ n=12      #parallel jobs
 
 #data preparation
 #generate text, wav.scp, utt2pk, spk2utt
-local/thchs-30_data_prep.sh $H $wkp_data/wkp_data || exit 1;
+local/wkp_data_prep.sh $H $wkp_data/wkp_data || exit 1;
 
 #produce MFCC features
 rm -rf data/mfcc && mkdir -p data/mfcc &&  cp -R data/{train,dev,test,test_phone} data/mfcc || exit 1;

@@ -143,7 +143,6 @@ fi
 if ! $skip_cuda_check; then cuda-gpu-available || exit 1; fi
 
 ###### PREPARE ALIGNMENTS ######
-echo
 echo "# PREPARING ALIGNMENTS"
 if [ ! -z "$labels" ]; then
   echo "Using targets '$labels' (by force)"

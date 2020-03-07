@@ -15,7 +15,7 @@ ali_list=`ls $1/ali.*.gz`
 echo "all ali list -> ${ali_list}"
 [ -z "${ali_list}" ] && echo "not found ali.*.list " && exit 1
 [ -z ${dir}/phones.txt ] && echo "not found phones.txt " && exit 2
-
+rm -f ${dir}/wkp_data.ark
 for ali in $ali_list
 do
 
@@ -105,11 +105,11 @@ do
              else if($i=="hao"){$i="[ 2 1 ]"}
              else if($i=="mi"){$i="[ 3 1 ]"}
              else if($i=="ya"){$i="[ 4 1 ]"}
-             else if($i=="hi"){$i="[ 5 1 ]"}
+             else if($i=="hai"){$i="[ 5 1 ]"}
              else{$i="[ 0 1 ]"}
          }
          print $0
-     }' ${dir}/${lab_sy_name} > ${dir}/${lab_name}
+     }' ${dir}/${lab_sy_name} >> ${dir}/${lab_name}
 
 done
 

@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+. ./env.sh
+
 . ./cmd.sh ## You'll want to change cmd.sh to something that will work on your system.
            ## This relates to the queue.
 . ./path.sh
 
-H=`pwd`  #exp home
+H=`pwd`   #exp home
 n=12      #parallel jobs
 
 #corpus and trans directory
@@ -26,6 +28,9 @@ local/ali-to-sy.sh exp/tri4b_ali_cv/
 
 #train dnn model
 local/nnet/run_wkp_dnn.sh --stage 0 --nj $n  exp/tri4b exp/tri4b_ali exp/tri4b_ali_cv || exit 1;
+
+#decode
+local/nnet/wkp_decode.sh   data/fbank/test/  exp/tri4b_dnn/
 local/wkp_trans.sh exp/tri4b_dnn/
 
 

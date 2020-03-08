@@ -44,10 +44,9 @@ if [ $stage -le 1 ]; then
   $cuda_cmd $outdir/log/train_nnet.log \
     steps/nnet/train.sh --skip_cuda_check true --delta_opts  "--delta-order=2"  --num_tgt 6  --copy_feats false  --hid-layers 6 --hid-dim 256  --labels ark:${alidir}/wkp_data.ark \
     --learn-rate 0.008 data/fbank/train data/fbank/dev data/lang $alidir $alidir $outdir || exit 7;
-  exit 1
+  #exit 1
 fi
 
-local/nnet/wkp_decode.sh   data/fbank/test/  exp/tri4b_dnn/
 
 
 

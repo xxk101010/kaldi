@@ -7,7 +7,7 @@
 . ./path.sh
 
 H=`pwd`   #exp home
-n=12      #parallel jobs
+n=24      #parallel jobs
 
 #corpus and trans directory
 [ -z $wkp_data ] && echo "can not found wkp data dir" && exit 1

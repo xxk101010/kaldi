@@ -14,7 +14,7 @@
 #export decode_cmd="queue.pl --mem 4G"
 #export mkgraph_cmd="queue.pl --mem 8G"
 #export cuda_cmd="queue.pl --gpu 1"
-export train_cmd=run.pl
-export decode_cmd="run.pl --mem 4G"
+export train_cmd="run.pl --mem 8G"
+export decode_cmd="run.pl --mem 8G"
 export mkgraph_cmd="run.pl --mem 8G"
 export cuda_cmd="run.pl"
